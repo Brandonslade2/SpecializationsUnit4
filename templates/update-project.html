@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="form-container mt-5">
+    <h3>Update Project</h3>
+    <form action="{{ url_for('update_project', project_id = project.id) }}" method="POST">
+        {{ form.csrf_token() }}
+        <div class="form-group mt-2">
+            {{ form.project_name.label }}
+            {{ form.project_name(value = project.project_name, class = "form-control") }}
+        </div>
+        <div class="form-group mt-2">
+            {{ form.description.label }}
+            {{ form.description(placeholder = project.description, class = "form-control") }}
+        </div>
+        <div class="form-group mt-2">
+            {{ form.completed.label }}
+            {{ form.completed(checked = project.completed) }}
+        </div>
+        <div class="form-group mt-2">
+            {{ form.team_selection.label }}
+            {{ form.team_selection }}
+        </div>
+        <div class="form-group mt-2">
+            {{ form.submit(type="submit", class="btn btn-primary") }}
+        </div>
+    </form>
+</div>
+{% endblock %}

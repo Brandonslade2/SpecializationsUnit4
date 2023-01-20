@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/base.css">
+
+    <title>{{ title }}</title>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                {% if page == "home" %}
+                    <a class="nav-link active" aria-current="page" href="#">
+                {% else %}
+                    <a class="nav-link" href="{{ url_for('home') }}">
+                {% endif %}
+                      Home</a>
+                </li>
+                <li class="nav-item">
+                {% if page == "teams" %}
+                    <a class="nav-link active" aria-current="page" href="#">
+                {% else %}
+                    <a class="nav-link" href="{{ url_for('teams') }}">
+                {% endif %}
+                  Teams</a>
+                </li>
+                <li class="nav-item">
+                {% if page == "projects" %}
+                    <a class="nav-link active" aria-current="page" href="#">
+                {% else %}
+                    <a class="nav-link" href="{{ url_for('projects') }}">
+                {% endif %}
+                    Projects</a>
+                </li>
+              </ul>
+            </nav>
+    </header>
+    <main>
+        {% block main %}
+        {% endblock %}
+    </main>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+</body>
+</html>

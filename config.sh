@@ -1,0 +1,1 @@
+export POSTGRES_URI="postgresql://postgres:2156950Bs!@localhost:5432/project-tracking-app-2"

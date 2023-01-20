@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block main %}
+<div>
+    <table class="table table-bordered">
+        <th>Project Name</th>
+        <th>Description</th>
+        <th>Completed?</th>
+        <th>Team</th>
+        {% for project in projects %}
+            <tr>
+                <td>{{ project.project_name }}</td>
+                <td>{{ project.description }}</td>
+                <td>{{ project.completed }}</td>
+                <td>{{ project.team.team_name }}</td>
+                <td>
+                    <a href="{{ url_for('update_project', project_id = project.id) }}">
+                        <button type="button" class="btn btn-primary">Update</button>
+                    </a>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block main %}
+<div>
+    <table class="table table-bordered">
+        <th>Team Name</th>
+            {% for team in teams %}
+            <tr>
+                <td>{{ team.team_name }}</td>
+                <td>
+                    <a href="{{ url_for('update_team', team_id = team.id) }}">
+                        <button type="button" class="btn btn-primary">Update</button>
+                    </a>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+{% endblock %}
